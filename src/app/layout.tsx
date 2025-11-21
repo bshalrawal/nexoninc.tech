@@ -9,7 +9,7 @@ import { EmailCTA } from '@/components/ui/email-cta';
 
 export const metadata: Metadata = {
   title: 'Nexon Inc',
-  description: '#1 Web Design & Digital Marketing Agency in UAE',
+  description: '#1 Web Design & Development  Company in Nepal',
 };
 
 export default function RootLayout({

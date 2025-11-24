@@ -43,7 +43,7 @@ export default function Hero() {
   return (
     <motion.div
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen overflow-hidden flex items-center justify-center bg-black text-white mb-20"
+      className="relative min-h-screen overflow-hidden flex items-center justify-center bg-black text-white mb-24"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

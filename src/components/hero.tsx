@@ -250,7 +250,7 @@ export default function Hero() {
               transition={{ duration: 0.3 }}
             >
               <p className="text-xs md:text-sm mb-2 text-white/70">Projects Completed</p>
-              <Counter value={500} from={450} suffix="+" className="text-4xl font-semibold" />
+              <Counter value={50} from={45} suffix="+" className="text-4xl font-semibold" />
             </motion.div>
 
             <motion.div 
@@ -267,7 +267,7 @@ export default function Hero() {
               transition={{ duration: 0.3 }}
             >
               <p className="text-xs md:text-sm mb-2 text-white/70">Clients Served</p>
-              <Counter value={350} from={300} suffix="+" className="text-4xl font-semibold" />
+              <Counter value={150} from={120} suffix="+" className="text-4xl font-semibold" />
             </motion.div>
 
           </motion.div>

@@ -110,7 +110,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 pt-8 border-t border-white/10">
           <div>
             <p className="font-semibold text-primary-foreground/50 uppercase tracking-wider mb-2">Contact Us</p>
-            <p className="text-lg font-medium">Budhanilkantha-11, Kathmandu</p>
+            <p className="text-lg font-medium">New Baneshowr, Kathmandu 44600, Nepal</p>
           </div>
           <div>
             <p className="font-semibold text-primary-foreground/50 uppercase tracking-wider mb-2">Call Our Office</p>

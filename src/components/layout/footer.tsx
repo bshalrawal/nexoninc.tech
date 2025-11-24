@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 import { Button } from '../ui/button';
 import Background from '../assets/Background.png';
 
@@ -47,7 +47,7 @@ export default function Footer() {
       />
 
       {/* Dark overlay with spotlight reveal */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-[5] bg-black/90"
         style={{
           maskImage: useTransform(
@@ -72,10 +72,10 @@ export default function Footer() {
           y: useTransform(smoothY, (y) => y - 150),
         }}
       />
-      
+
       <div className="container mx-auto relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
+
           <div className="col-span-1 lg:col-span-2">
             <p className="text-lg text-white/80 font-light leading-relaxed">
               Nexon Inc. designs and builds web, software, and AI products. We combine strategy, engineering, and design to deliver reliable, user-centered solutions that help businesses grow.
@@ -85,12 +85,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-primary-foreground/50 uppercase tracking-wider mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/services/ui-ux-creative-design" className="hover:text-accent transition-colors">Strategy & Research</Link></li>
-              <li><Link href="/services/app-development" className="hover:text-accent transition-colors">Web Development</Link></li>
-              <li><Link href="/services/ecommerce-solutions" className="hover:text-accent transition-colors">Web Solution</Link></li>
-              <li><Link href="/services/seo-and-analytics" className="hover:text-accent transition-colors">Digital Marketing</Link></li>
-              <li><Link href="/services/ui-ux-creative-design" className="hover:text-accent transition-colors">App Design</Link></li>
+              <li><Link href="/services/ui-ux-creative-design" className="hover:text-accent transition-colors">UI/UX Creative Design</Link></li>
               <li><Link href="/services/app-development" className="hover:text-accent transition-colors">App Development</Link></li>
+              <li><Link href="/services/ecommerce-solutions" className="hover:text-accent transition-colors">E-commerce Solutions</Link></li>
+              <li><Link href="/services/seo-and-analytics" className="hover:text-accent transition-colors">SEO & Analytics</Link></li>
+              <li><Link href="/services/graphic-design" className="hover:text-accent transition-colors">Graphic Design</Link></li>
+              <li><Link href="/services/cloud-and-devops" className="hover:text-accent transition-colors">Cloud & DevOps</Link></li>
             </ul>
           </div>
 
@@ -110,7 +110,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 pt-8 border-t border-white/10">
           <div>
             <p className="font-semibold text-primary-foreground/50 uppercase tracking-wider mb-2">Contact Us</p>
-            <p className="text-lg font-medium">New Baneshowr, Kathmandu 44600, Nepal</p>
+            <p className="text-lg font-medium">New Baneshwor, Kathmandu 44600, Nepal</p>
           </div>
           <div>
             <p className="font-semibold text-primary-foreground/50 uppercase tracking-wider mb-2">Call Our Office</p>
@@ -120,20 +120,7 @@ export default function Footer() {
             <p className="font-semibold text-primary-foreground/50 uppercase tracking-wider mb-2">Send a Message</p>
             <a href="mailto:info@nexoninc.tech" className="text-xl font-medium hover:text-accent transition-colors">info@nexoninc.tech</a>
           </div>
-          <div>
-            <p className="font-semibold text-primary-foreground/50 uppercase tracking-wider mb-2">Follow Us</p>
-            <div className="flex items-center space-x-2">
-              <Button 
-                size="icon" 
-                className="rounded-full border border-white text-white bg-transparent hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-                aria-label="Facebook"
-              >
-                <a href="https://www.facebook.com/nexoninc" target="_blank" rel="noopener noreferrer">
-                  <Facebook className="h-5 w-5"/>
-                </a>
-              </Button>
-            </div>
-          </div>
+
         </div>
 
         <div className="text-center mt-12 pt-8 border-t border-white/10">

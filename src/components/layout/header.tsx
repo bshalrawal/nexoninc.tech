@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
-import { Menu, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Menu, Instagram, Linkedin } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -74,7 +74,7 @@ export default function Header() {
   return (
     <header className="absolute top-0 w-full py-4 px-4 sm:px-6 lg:px-8 z-30">
       <div className="container mx-auto flex items-center justify-between">
-        
+
         {/* Mobile Menu */}
         <div className="lg:hidden">
           <Sheet>
@@ -91,7 +91,7 @@ export default function Header() {
               </SheetHeader>
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between border-b border-white/10 p-4">
-                    <Link href="/" className="text-white font-bold text-2xl">Nexon Inc</Link>
+                  <Link href="/" className="text-white font-bold text-2xl">Nexon Inc</Link>
                 </div>
 
                 <div className="flex flex-col space-y-4 p-4 mt-8">
@@ -102,9 +102,7 @@ export default function Header() {
                   ))}
 
                   <div className="flex items-center space-x-4 pt-4 border-t border-white/10">
-                    <a href="https://www.facebook.com/nexoninc" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">
-                      <Facebook />
-                    </a>
+
                   </div>
                 </div>
               </div>
@@ -122,11 +120,11 @@ export default function Header() {
 
           {/* Sticky Navigation */}
           <div className="justify-self-center">
-            <nav 
+            <nav
               className={cn(
                 "fixed left-1/2 -translate-x-1/2 top-4 z-50 transition-all duration-300",
                 "flex items-center space-x-1 px-3 py-2 rounded-full",
-                isScrolled 
+                isScrolled
                   ? "bg-white/95 backdrop-blur-lg shadow-lg border border-gray-200"
                   : "bg-white/20 backdrop-blur-md"
               )}
@@ -137,12 +135,12 @@ export default function Header() {
                   {/* About */}
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                      <Link 
-                        href="/about" 
+                      <Link
+                        href="/about"
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          isScrolled 
-                            ? 'text-gray-900 hover:text-primary hover:bg-primary/10' 
+                          isScrolled
+                            ? 'text-gray-900 hover:text-primary hover:bg-primary/10'
                             : 'text-white hover:bg-primary/80'
                         )}
                       >
@@ -166,11 +164,11 @@ export default function Header() {
 
                     <NavigationMenuContent>
                       <div className="grid grid-cols-3 w-[60rem] p-4">
-                        
+
                         {/* Tabs */}
                         <div className="col-span-1 flex flex-col gap-2 pr-4 border-r border-border">
-                          
-                          <button 
+
+                          <button
                             onMouseEnter={() => setActiveTab('development')}
                             className={cn(
                               "flex items-start gap-3 rounded-md p-3 text-left transition-colors",
@@ -185,7 +183,7 @@ export default function Header() {
                             </div>
                           </button>
 
-                          <button 
+                          <button
                             onMouseEnter={() => setActiveTab('marketing')}
                             className={cn(
                               "flex items-start gap-3 rounded-md p-3 text-left transition-colors",
@@ -205,29 +203,29 @@ export default function Header() {
                         {/* Services Grid */}
                         <ul className="col-span-2 grid w-full grid-cols-2 gap-3">
                           {activeTab === 'development' && (
-                              developmentServices.map((service) => (
-                                <ListItem
-                                  key={service.title}
-                                  title={service.title}
-                                  href={`/services/${service.slug}`}
-                                  icon={service.icon}
-                                >
-                                  {service.shortDescription}
-                                </ListItem>
-                              ))
+                            developmentServices.map((service) => (
+                              <ListItem
+                                key={service.title}
+                                title={service.title}
+                                href={`/services/${service.slug}`}
+                                icon={service.icon}
+                              >
+                                {service.shortDescription}
+                              </ListItem>
+                            ))
                           )}
 
                           {activeTab === 'marketing' && (
-                              marketingServices.map((service) => (
-                                <ListItem
-                                  key={service.title}
-                                  title={service.title}
-                                  href={`/services/${service.slug}`}
-                                  icon={service.icon}
-                                >
-                                  {service.shortDescription}
-                                </ListItem>
-                              ))
+                            marketingServices.map((service) => (
+                              <ListItem
+                                key={service.title}
+                                title={service.title}
+                                href={`/services/${service.slug}`}
+                                icon={service.icon}
+                              >
+                                {service.shortDescription}
+                              </ListItem>
+                            ))
                           )}
                         </ul>
 
@@ -239,12 +237,12 @@ export default function Header() {
                   {navLinks.map((link) => (
                     <NavigationMenuItem key={link.href}>
                       <NavigationMenuLink asChild>
-                        <Link 
-                          href={link.href} 
+                        <Link
+                          href={link.href}
                           className={cn(
                             navigationMenuTriggerStyle(),
-                            isScrolled 
-                              ? 'text-gray-900 hover:text-primary hover:bg-primary/10' 
+                            isScrolled
+                              ? 'text-gray-900 hover:text-primary hover:bg-primary/10'
                               : 'text-white hover:bg-primary/80'
                           )}
                         >
@@ -261,19 +259,7 @@ export default function Header() {
 
           {/* Social Icons */}
           <div className="justify-self-end flex items-center space-x-2">
-            {[ 
-              { href: "https://www.facebook.com/nexoninc", Icon: Facebook }
-            ].map(({ href, Icon }) => (
-              <Button 
-                key={href}
-                size="icon" 
-                className="rounded-full border border-white text-white bg-transparent hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-              >
-                <a href={href} target="_blank" rel="noopener noreferrer">
-                  <Icon className="h-5 w-5"/>
-                </a>
-              </Button>
-            ))}
+
           </div>
 
         </div>
@@ -293,4 +279,4 @@ export default function Header() {
   );
 }
 
-    
+

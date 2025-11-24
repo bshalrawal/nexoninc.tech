@@ -306,7 +306,7 @@ export default function WhyNexon() {
                   whileInView={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
                 >
-                  350+
+                  150+
                 </motion.div>
                 <div className="text-sm text-gray-600">Happy Clients</div>
               </div>
@@ -318,7 +318,7 @@ export default function WhyNexon() {
                   whileInView={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 100, delay: 0.7 }}
                 >
-                  500+
+                  50+
                 </motion.div>
                 <div className="text-sm text-gray-600">Projects Done</div>
               </div>

@@ -25,7 +25,7 @@ export default function Solutions() {
 
   return (
     <section className="relative w-full overflow-hidden bg-white py-36">
-      {/* ANIMATED BACKGROUND - Much More Visible */}
+      {/* ANIMATED BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large Animated Orbs */}
         <motion.div
@@ -90,30 +90,6 @@ export default function Solutions() {
             }}
           />
         ))}
-
-        {/* Animated Lines */}
-        <motion.div
-          className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-30"
-          animate={{
-            x: ['-100%', '100%'],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/3 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-30"
-          animate={{
-            x: ['100%', '-100%'],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
       </div>
 
       {/* CONTENT */}

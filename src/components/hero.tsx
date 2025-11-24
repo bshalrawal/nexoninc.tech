@@ -193,7 +193,7 @@ export default function Hero() {
               }}
               transition={{ duration: 0.3 }}
             >
-               <Counter value={500} from={450} suffix="+" className="text-4xl font-semibold mb-2" />
+               <Counter value={150} from={450} suffix="+" className="text-4xl font-semibold mb-2" />
               <p className="text-xs text-white/70">
                 Projects completed for various services<br />in the IT sector.
               </p>
@@ -221,7 +221,7 @@ export default function Hero() {
               }}
               transition={{ duration: 0.3 }}
             >
-              <Counter value={350} from={300} suffix="+" className="text-4xl font-semibold mb-2" />
+              <Counter value={50} from={40} suffix="+" className="text-4xl font-semibold mb-2" />
               <p className="text-xs text-white/70">
                 Clients Served Across Various<br />Industries and Sectors Globally
               </p>
@@ -250,7 +250,7 @@ export default function Hero() {
               transition={{ duration: 0.3 }}
             >
               <p className="text-xs md:text-sm mb-2 text-white/70">Projects Completed</p>
-              <Counter value={50} from={45} suffix="+" className="text-4xl font-semibold" />
+              <Counter value={150} from={140} suffix="+" className="text-4xl font-semibold" />
             </motion.div>
 
             <motion.div 

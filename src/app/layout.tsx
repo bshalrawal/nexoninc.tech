@@ -8,7 +8,7 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top';
 import { EmailCTA } from '@/components/ui/email-cta';
 
 export const metadata: Metadata = {
-  title: 'NexonInc — Web Design & Development Company in Kathmandu',
+  title: 'Nexon Inc- Engineering Success',
   description: '#1 Web Design & Development  Company in Nepal',
 };
 

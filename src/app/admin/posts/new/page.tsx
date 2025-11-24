@@ -15,11 +15,7 @@ import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const generateRandomSlug = () => {
-<<<<<<< HEAD
-    return Math.random().toString(36).substring(2, 12);
-=======
   return Math.random().toString(36).substring(2, 12);
->>>>>>> 4faf67b (inserted favicon)
 };
 
 export default function NewPostPage() {
@@ -32,11 +28,8 @@ export default function NewPostPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [uploadProgress, setUploadProgress] = useState<number | null>(null);
 
-<<<<<<< HEAD
-=======
   const [uploadError, setUploadError] = useState<string | null>(null);
 
->>>>>>> 4faf67b (inserted favicon)
   useEffect(() => {
     // Generate a random slug when the component mounts
     setSlug(generateRandomSlug());
@@ -45,11 +38,7 @@ export default function NewPostPage() {
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 4faf67b (inserted favicon)
   const handleImageUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setImageUrl(e.target.value);
   };
@@ -59,16 +48,10 @@ export default function NewPostPage() {
     if (!file) return;
 
     setUploadProgress(0);
-<<<<<<< HEAD
-    const storage = getStorage();
-    const storageRef = ref(storage, `post_images/${Date.now()}_${file.name}`);
-    
-=======
     setUploadError(null);
     const storage = getStorage();
     const storageRef = ref(storage, `post_images/${Date.now()}_${file.name}`);
 
->>>>>>> 4faf67b (inserted favicon)
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on('state_changed',
@@ -78,10 +61,7 @@ export default function NewPostPage() {
       },
       (error) => {
         console.error("Error uploading image:", error);
-<<<<<<< HEAD
-=======
         setUploadError(`Upload failed: ${error.message}`);
->>>>>>> 4faf67b (inserted favicon)
         setUploadProgress(null);
       },
       () => {
@@ -93,8 +73,6 @@ export default function NewPostPage() {
     );
   };
 
-<<<<<<< HEAD
-=======
   const handleDataUriConversion = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -117,16 +95,11 @@ export default function NewPostPage() {
     reader.readAsDataURL(file);
   };
 
->>>>>>> 4faf67b (inserted favicon)
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const finalSlug = slug || generateRandomSlug();
     if (!firestore || !title || !content) return;
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 4faf67b (inserted favicon)
     setIsSubmitting(true);
 
     try {
@@ -139,14 +112,9 @@ export default function NewPostPage() {
         updatedAt: serverTimestamp(),
       });
       router.push('/admin/posts');
-<<<<<<< HEAD
-    } catch (e) {
-      console.error("Error adding document: ", e);
-=======
     } catch (e: any) {
       console.error("Error adding document: ", e);
       setUploadError(`Failed to save post: ${e.message || e}`);
->>>>>>> 4faf67b (inserted favicon)
       setIsSubmitting(false);
     }
   };
@@ -159,21 +127,13 @@ export default function NewPostPage() {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
-<<<<<<< HEAD
-          
-=======
 
->>>>>>> 4faf67b (inserted favicon)
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <Label htmlFor="title">Title / Place Name</Label>
               <Input id="title" value={title} onChange={handleTitleChange} placeholder="e.g., Bardhaman, Shantiniketan" required />
             </div>
-<<<<<<< HEAD
-             <div>
-=======
             <div>
->>>>>>> 4faf67b (inserted favicon)
               <Label htmlFor="slug-display">Slug</Label>
               <Input id="slug-display" value={slug} readOnly className="bg-muted" />
               <input type="hidden" name="slug" value={slug} />
@@ -183,23 +143,6 @@ export default function NewPostPage() {
           <div>
             <Label htmlFor="imageUrl">Featured Image</Label>
             <Tabs defaultValue="upload">
-<<<<<<< HEAD
-                <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="upload">Upload</TabsTrigger>
-                    <TabsTrigger value="url">URL</TabsTrigger>
-                </TabsList>
-                <TabsContent value="upload" className="py-4">
-                    <Input id="imageUrl" type="file" onChange={handleImageUpload} accept="image/*" />
-                    {uploadProgress !== null && (
-                        <Progress value={uploadProgress} className="w-full mt-2" />
-                    )}
-                </TabsContent>
-                <TabsContent value="url" className="py-4">
-                    <Input name="imageUrl" type="url" placeholder="https://..." value={imageUrl} onChange={handleImageUrlChange} />
-                </TabsContent>
-            </Tabs>
-             {imageUrl && (
-=======
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="upload">Upload</TabsTrigger>
                 <TabsTrigger value="data-uri">Data URI</TabsTrigger>
@@ -228,7 +171,6 @@ export default function NewPostPage() {
               </div>
             )}
             {imageUrl && (
->>>>>>> 4faf67b (inserted favicon)
               <div className="mt-4 p-2 border rounded-md">
                 <p className="text-xs text-muted-foreground mb-2">Image Preview:</p>
                 <Image src={imageUrl} alt="Image preview" width={100} height={100} className="object-contain rounded-md" />
@@ -238,11 +180,7 @@ export default function NewPostPage() {
 
           <div>
             <Label htmlFor="content">Description / Content</Label>
-<<<<<<< HEAD
-             <TiptapEditor
-=======
             <TiptapEditor
->>>>>>> 4faf67b (inserted favicon)
               content={content}
               onChange={setContent}
             />

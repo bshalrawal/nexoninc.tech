@@ -38,10 +38,7 @@ export default function EditPostPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [uploadProgress, setUploadProgress] = useState<number | null>(null);
-<<<<<<< HEAD
-=======
   const [uploadError, setUploadError] = useState<string | null>(null);
->>>>>>> 4faf67b (inserted favicon)
 
 
   useEffect(() => {
@@ -52,11 +49,7 @@ export default function EditPostPage() {
         const postData = docSnap.data() as Post;
         // Ensure slug exists, if not, create one
         if (!postData.slug) {
-<<<<<<< HEAD
-            postData.slug = generateRandomSlug();
-=======
           postData.slug = generateRandomSlug();
->>>>>>> 4faf67b (inserted favicon)
         }
         setPost(postData);
       } else {
@@ -74,27 +67,17 @@ export default function EditPostPage() {
     const newPost = { ...post, [field]: value };
     setPost(newPost);
   };
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 4faf67b (inserted favicon)
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!post) return;
     const file = e.target.files?.[0];
     if (!file) return;
 
     setUploadProgress(0);
-<<<<<<< HEAD
-    const storage = getStorage();
-    const storageRef = ref(storage, `post_images/${Date.now()}_${file.name}`);
-    
-=======
     setUploadError(null);
     const storage = getStorage();
     const storageRef = ref(storage, `post_images/${Date.now()}_${file.name}`);
 
->>>>>>> 4faf67b (inserted favicon)
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on('state_changed',
@@ -104,10 +87,7 @@ export default function EditPostPage() {
       },
       (error) => {
         console.error("Error uploading image:", error);
-<<<<<<< HEAD
-=======
         setUploadError(`Upload failed: ${error.message}`);
->>>>>>> 4faf67b (inserted favicon)
         setUploadProgress(null);
       },
       () => {
@@ -119,8 +99,6 @@ export default function EditPostPage() {
     );
   };
 
-<<<<<<< HEAD
-=======
   const handleDataUriConversion = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!post) return;
     const file = e.target.files?.[0];
@@ -144,20 +122,14 @@ export default function EditPostPage() {
     reader.readAsDataURL(file);
   };
 
->>>>>>> 4faf67b (inserted favicon)
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!firestore || !post || !id) return;
 
     // Ensure slug exists before submitting
     const finalPost = {
-<<<<<<< HEAD
-        ...post,
-        slug: post.slug || generateRandomSlug(),
-=======
       ...post,
       slug: post.slug || generateRandomSlug(),
->>>>>>> 4faf67b (inserted favicon)
     };
 
     setIsSubmitting(true);
@@ -168,14 +140,9 @@ export default function EditPostPage() {
         updatedAt: serverTimestamp(),
       });
       router.push('/admin/posts');
-<<<<<<< HEAD
-    } catch (e) {
-      console.error("Error updating document: ", e);
-=======
     } catch (e: any) {
       console.error("Error updating document: ", e);
       setUploadError(`Failed to save post: ${e.message || e}`);
->>>>>>> 4faf67b (inserted favicon)
       setIsSubmitting(false);
     }
   };
@@ -211,16 +178,6 @@ export default function EditPostPage() {
     <Card className="rounded-lg">
       <CardHeader>
         <div className="flex items-center gap-4">
-<<<<<<< HEAD
-           <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => router.back()}>
-                <ArrowLeft className="h-4 w-4" />
-                <span className="sr-only">Back</span>
-            </Button>
-            <div>
-                <CardTitle>Edit Post</CardTitle>
-                <CardDescription>Update the details for your post.</CardDescription>
-            </div>
-=======
           <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => router.back()}>
             <ArrowLeft className="h-4 w-4" />
             <span className="sr-only">Back</span>
@@ -229,7 +186,6 @@ export default function EditPostPage() {
             <CardTitle>Edit Post</CardTitle>
             <CardDescription>Update the details for your post.</CardDescription>
           </div>
->>>>>>> 4faf67b (inserted favicon)
         </div>
       </CardHeader>
       <CardContent>
@@ -247,23 +203,6 @@ export default function EditPostPage() {
 
           <div>
             <Label htmlFor="imageUrl">Featured Image</Label>
-<<<<<<< HEAD
-             <Tabs defaultValue="upload">
-                <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="upload">Upload</TabsTrigger>
-                    <TabsTrigger value="url">URL</TabsTrigger>
-                </TabsList>
-                <TabsContent value="upload" className="py-4">
-                    <Input id="imageUrl" type="file" onChange={handleImageUpload} accept="image/*" />
-                    {uploadProgress !== null && (
-                        <Progress value={uploadProgress} className="w-full mt-2" />
-                    )}
-                </TabsContent>
-                <TabsContent value="url" className="py-4">
-                    <Input name="imageUrl" type="url" placeholder="https://..." value={post.imageUrl || ''} onChange={(e) => handleInputChange('imageUrl', e.target.value)} />
-                </TabsContent>
-            </Tabs>
-=======
             <Tabs defaultValue="upload">
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="upload">Upload</TabsTrigger>
@@ -292,7 +231,6 @@ export default function EditPostPage() {
                 {uploadError}
               </div>
             )}
->>>>>>> 4faf67b (inserted favicon)
             {post.imageUrl && (
               <div className="mt-4 p-2 border rounded-md">
                 <p className="text-xs text-muted-foreground mb-2">Image Preview:</p>

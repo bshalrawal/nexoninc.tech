@@ -92,6 +92,13 @@ export default function Footer() {
               <li><Link href="/services/graphic-design" className="hover:text-accent transition-colors">Graphic Design</Link></li>
               <li><Link href="/services/cloud-and-devops" className="hover:text-accent transition-colors">Cloud & DevOps</Link></li>
             </ul>
+            <div className="mt-6">
+              <Button asChild variant="outline" className="gap-2 border-white/20 hover:bg-white/10 hover:text-white">
+                <a href="https://wa.me/9779763607255" target="_blank" rel="noopener noreferrer">
+                  Get in Touch
+                </a>
+              </Button>
+            </div>
           </div>
 
           <div>
@@ -120,6 +127,7 @@ export default function Footer() {
             <p className="font-semibold text-primary-foreground/50 uppercase tracking-wider mb-2">Send a Message</p>
             <a href="mailto:info@nexoninc.tech" className="text-xl font-medium hover:text-accent transition-colors">info@nexoninc.tech</a>
           </div>
+
 
         </div>
 

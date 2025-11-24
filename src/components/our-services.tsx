@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { services } from "@/app/services/services-data";
 import type { Service } from "@/app/services/services-data";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const ServiceCard = ({ slug, title, shortDescription, icon: Icon }: Service) => (
   <motion.div 
@@ -93,8 +94,27 @@ export default function OurServices({ className }: { className?: string }) {
                     <ServiceCard key={index} {...service} />
                 ))}
             </motion.div>
+            
         </div>
       </div>
+      <div className="flex justify-center mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <Button
+            asChild
+            className="group h-12 mt-12 px-10 text-lg bg-primary text-white hover:bg-primary/90 transition-colors duration-300"
+          >
+            <Link href="https://wa.me/9779763607255" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              Get in Touch <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </motion.div>
+</div>
+
     </section>
   );
 }

@@ -28,16 +28,7 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-<<<<<<< HEAD
-      {
-        protocol: 'https',
-        hostname: 'soharon.com',
-        port: '',
-        pathname: '/**',
-      },
-=======
-
->>>>>>> 4faf67b (inserted favicon)
+  
       {
         protocol: 'https',
         hostname: 'img.pikbest.com',

@@ -18,7 +18,7 @@ import React, { useState, useEffect } from 'react';
 import { services } from '@/app/services/services-data';
 
 const developmentServices = services.filter(s =>
-  ['ui-ux-creative-design', 'app-development', 'graphic-design', 'ecommerce-solutions', 'cloud-and-devops', 'qa-and-test-automation', 'maintenance-and-support'].includes(s.slug)
+  ['ui-ux-creative-design', 'app-development', 'software-development', 'graphic-design', 'ecommerce-solutions', 'cloud-and-devops', 'qa-and-test-automation', 'maintenance-and-support'].includes(s.slug)
 ).sort((a, b) => a.title.localeCompare(b.title));
 
 const marketingServices = services.filter(s =>

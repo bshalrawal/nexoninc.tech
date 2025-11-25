@@ -8,11 +8,13 @@ import Background from "./assets/Background.png";
 import Link from "next/link";
 
 const services = [
-  "Web Development", 
-  "Brand Strategy", 
-  "Marketing", 
-  "Paid Advertising", 
-  "Social Media"
+  "App Development",
+  "Software Development",
+  "AI Products & Solutions",
+  "Web Development",
+  "E-commerce Solutions",
+  "Social Media Management",
+  "UI/UX Design"
 ];
 
 export default function Hero() {
@@ -58,7 +60,7 @@ export default function Hero() {
       />
 
       {/* Dark overlay with spotlight reveal */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-[5] bg-black/90"
         style={{
           maskImage: useTransform(
@@ -88,13 +90,13 @@ export default function Hero() {
       <div className="relative z-[20] w-full max-w-7xl mx-auto text-center pt-40 px-4">
 
         {/* Headline */}
-        <motion.h1 
+        <motion.h1
           className="flex flex-col items-center text-4xl md:text-6xl font-light mb-10 leading-tight"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <motion.span 
+          <motion.span
             className="text-white/80 mb-4"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -104,7 +106,7 @@ export default function Hero() {
           </motion.span>
 
           {/* Rotating text */}
-          <span 
+          <span
             className="relative h-24 font-semibold text-accent text-5xl md:text-6xl flex items-center justify-center"
             aria-live="polite"
             aria-atomic="true"
@@ -131,7 +133,7 @@ export default function Hero() {
         </motion.h1>
 
         {/* Subheadline */}
-        <motion.p 
+        <motion.p
           className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -142,7 +144,7 @@ export default function Hero() {
 
         {/* CTA Button */}
         <Link href="https://wa.me/9779763607255" target="_blank" rel="noopener noreferrer">
-          <motion.button 
+          <motion.button
             className="
               group relative px-10 py-4 rounded-full 
               bg-white/10 border border-white/30 
@@ -153,7 +155,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               boxShadow: "0 0 50px rgba(0,200,255,0.5)",
               borderColor: "rgba(255,255,255,0.5)",
@@ -161,7 +163,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
           >
             <span className="relative z-10 font-medium">Get a Quote</span>
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full"
               initial={{ opacity: 0, scale: 0.8 }}
               whileHover={{ opacity: 1, scale: 1 }}
@@ -173,27 +175,27 @@ export default function Hero() {
         {/* Counters - Positioned like in image */}
         <div className="relative mt-20">
           {/* Top Counter */}
-           <motion.div 
+          <motion.div
             className="absolute left-0 bottom-0 hidden lg:block"
             initial={{ x: -40, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
           >
-            <motion.div 
+            <motion.div
               className="
                 bg-white/10 backdrop-blur-md p-6 rounded-2xl 
                 border border-white/20
                 cursor-default
                 w-[280px]
               "
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 backgroundColor: "rgba(255,255,255,0.15)",
                 borderColor: "rgba(255,255,255,0.3)",
               }}
               transition={{ duration: 0.3 }}
             >
-               <Counter value={50} from={45} suffix="+" className="text-4xl font-semibold mb-2" />
+              <Counter value={50} from={45} suffix="+" className="text-4xl font-semibold mb-2" />
               <p className="text-xs text-white/70">
                 Projects completed for various services<br />in the IT sector.
               </p>
@@ -201,20 +203,20 @@ export default function Hero() {
           </motion.div>
 
           {/* Bottom Counter */}
-          <motion.div 
+          <motion.div
             className="absolute right-0 bottom-0 hidden lg:block"
             initial={{ x: 40, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
           >
-            <motion.div 
+            <motion.div
               className="
                 bg-white/10 backdrop-blur-md p-6 rounded-2xl 
                 border border-white/20
                 cursor-default
                 w-[280px]
               "
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 backgroundColor: "rgba(255,255,255,0.15)",
                 borderColor: "rgba(255,255,255,0.3)",
@@ -230,19 +232,19 @@ export default function Hero() {
 
 
           {/* Mobile Counters */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-xl mx-auto lg:hidden"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
           >
-            <motion.div 
+            <motion.div
               className="
                 bg-white/10 backdrop-blur-md p-6 rounded-2xl 
                 border border-white/20
                 cursor-default
               "
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 backgroundColor: "rgba(255,255,255,0.15)",
                 borderColor: "rgba(255,255,255,0.3)",
@@ -253,13 +255,13 @@ export default function Hero() {
               <Counter value={50} from={45} suffix="+" className="text-4xl font-semibold" />
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="
                 bg-white/10 backdrop-blur-md p-6 rounded-2xl 
                 border border-white/20
                 cursor-default
               "
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 backgroundColor: "rgba(255,255,255,0.15)",
                 borderColor: "rgba(255,255,255,0.3)",

@@ -87,12 +87,13 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/services/ui-ux-creative-design" className="hover:text-accent transition-colors">UI/UX Creative Design</Link></li>
               <li><Link href="/services/app-development" className="hover:text-accent transition-colors">App Development</Link></li>
+              <li><Link href="/services/software-development" className="hover:text-accent transition-colors">Software Development</Link></li>
               <li><Link href="/services/ecommerce-solutions" className="hover:text-accent transition-colors">E-commerce Solutions</Link></li>
               <li><Link href="/services/seo-and-analytics" className="hover:text-accent transition-colors">SEO & Analytics</Link></li>
               <li><Link href="/services/graphic-design" className="hover:text-accent transition-colors">Graphic Design</Link></li>
               <li><Link href="/services/cloud-and-devops" className="hover:text-accent transition-colors">Cloud & DevOps</Link></li>
             </ul>
-           
+
           </div>
 
           <div>

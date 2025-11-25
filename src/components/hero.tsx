@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { Counter } from "./ui/counter";
 import Image from "next/image";
 import Background from "./assets/Background.png";
@@ -107,28 +107,22 @@ export default function Hero() {
 
           {/* Rotating text */}
           <span
-            className="relative h-24 font-semibold text-accent text-5xl md:text-6xl flex items-center justify-center"
+            className="relative h-32 w-full max-w-4xl px-4 font-semibold text-accent text-3xl md:text-6xl flex items-center justify-center"
             aria-live="polite"
             aria-atomic="true"
           >
-            {services.map((service, index) => (
+            <AnimatePresence mode="wait">
               <motion.span
-                key={service}
-                className="absolute drop-shadow-[0_0_20px_rgba(0,0,0,1)]"
+                key={services[currentService]}
+                className="absolute drop-shadow-[0_0_20px_rgba(0,0,0,1)] text-center w-full"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: index === currentService ? 1 : 0,
-                  y: index === currentService ? 0 : 20,
-                  scale: index === currentService ? 1 : 0.95,
-                }}
-                transition={{
-                  duration: 0.5,
-                  ease: "easeOut",
-                }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                {service}
+                {services[currentService]}
               </motion.span>
-            ))}
+            </AnimatePresence>
           </span>
         </motion.h1>
 

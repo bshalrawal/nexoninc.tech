@@ -100,7 +100,7 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            We do
+            We Do
           </motion.span>
 
           {/* Rotating text */}
